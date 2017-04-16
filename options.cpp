@@ -34,7 +34,7 @@ void fileLoad(vector<vector<int> > &data) {
     try {
     fin >> data;
     cout << data;
-    if(existsVillageWithAllBirds(data) == true) {
+    if(existsVillageWithAllBirds(data)) {
         cout << "Van" << endl;
     } else {
         cout << "Nincs" << endl;
@@ -110,29 +110,7 @@ ostream& operator<<(ostream& out, const vector<vector<int> > &data)
     return out;
 }
 
-//feladat megoldás
-
-bool task(const vector<vector<int> >& v) {
-    for(int column = 0; column < v.at(0).size(); ++column) {
-        bool has_all_birds = true;
-        for(int row = 0; row < v.size(); ++row) {
-            if(v.at(row).at(column) == 0) {
-                has_all_birds = false;
-                break;
-            }
-        }
-        if(has_all_birds) {
-            return true;
-        }
-    }
-    return false;
-}
-
 //standard inputról való beolvasás(billentyűzetről)
-
-
-
-
 
 void standardInput(vector<vector<int> > &data) {
 
@@ -180,7 +158,7 @@ void standardInput(vector<vector<int> > &data) {
         }
 
 
-         if(existsVillageWithAllBirds(data) == true) {
+         if(existsVillageWithAllBirds(data)) {
             cout << "Van" << endl;
         }else {
             cout << "Nincs" << endl;
