@@ -180,7 +180,7 @@ void standardInput(vector<vector<int> > &data) {
 
 //menürendszer
 
-void echoMenu(std::vector<std::vector<int> > &data) {
+void echoMenu(vector<vector<int> > &data) {
 
     data.clear();
 
