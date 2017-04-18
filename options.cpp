@@ -1,8 +1,8 @@
 #include "function.h"
 
-
 using namespace std;
 
+//optimistakereses
 bool isColumnNonzero(const vector<vector<int> > &v,const int col) {
     bool no_zeros = true;
     int row = 0;
@@ -13,6 +13,7 @@ bool isColumnNonzero(const vector<vector<int> > &v,const int col) {
     return no_zeros;
 }
 
+//Pesszimista kereses
 bool existsVillageWithAllBirds(const vector<vector<int> > &v) {
     bool exist = false;
     int col = 0;
@@ -56,6 +57,126 @@ void fileLoad(vector<vector<int> > &data) {
     }
 }
 
+
+void fileLoadTest1(vector<vector<int> > &data) {
+    fstream fin;
+    string filename= "input.txt";
+    fin.open(filename.c_str());
+
+    try {
+    fin >> data;
+    cout << data;
+    if(existsVillageWithAllBirds(data)) {
+        cout << "Van" << endl;
+    } else {
+        cout << "Nincs" << endl;
+    }
+
+    }
+    catch(Exception e) {
+    switch(e) {
+            case NC:
+                cout << "Negative Count" << endl;
+                break;
+            case WI:
+                cout << "Wrong Input" << endl;
+                break;
+            case WV:
+                cout << "Wrong Value" << endl;
+                break;
+    }
+    }
+}
+
+void fileLoadTest2(vector<vector<int> > &data) {
+    fstream fin;
+    string filename= "input3.txt";
+    fin.open(filename.c_str());
+
+    try {
+    fin >> data;
+    cout << data;
+    if(existsVillageWithAllBirds(data)) {
+        cout << "Van" << endl;
+    } else {
+        cout << "Nincs" << endl;
+    }
+
+    }
+    catch(Exception e) {
+    switch(e) {
+            case NC:
+                cout << "Negative Count" << endl;
+                break;
+            case WI:
+                cout << "Wrong Input" << endl;
+                break;
+            case WV:
+                cout << "Wrong Value" << endl;
+                break;
+    }
+    }
+}
+
+void fileLoadTest3(vector<vector<int> > &data) {
+    fstream fin;
+    string filename= "input4.txt";
+    fin.open(filename.c_str());
+
+    try {
+    fin >> data;
+    cout << data;
+    if(existsVillageWithAllBirds(data)) {
+        cout << "Van" << endl;
+    } else {
+        cout << "Nincs" << endl;
+    }
+
+    }
+    catch(Exception e) {
+    switch(e) {
+            case NC:
+                cout << "Negative Count" << endl;
+                break;
+            case WI:
+                cout << "Wrong Input" << endl;
+                break;
+            case WV:
+                cout << "Wrong Value" << endl;
+                break;
+    }
+    }
+}
+
+void fileLoadTest4( vector<vector<int> > &data) {
+    fstream fin;
+    string filename = "input5.txt";
+    fin.open(filename.c_str());
+
+    try {
+    fin >> data;
+    cout << data;
+    if(existsVillageWithAllBirds(data)) {
+        cout << "Van" << endl;
+    } else {
+        cout << "Nincs" << endl;
+    }
+
+    }
+    catch(Exception e) {
+    switch(e) {
+            case NC:
+                cout << "Negative Count" << endl;
+                break;
+            case WI:
+                cout << "Wrong Input" << endl;
+                break;
+            case WV:
+                cout << "Wrong Value" << endl;
+                break;
+    }
+    }
+}
 
 //Mátrixok beolvasása
 
@@ -178,6 +299,13 @@ void standardInput(vector<vector<int> > &data) {
         }
 }
 
+void echoTask() {
+    cout << right << setw(13) << "Madarak eletenek kutatasaval foglalkozo szakemberek n kulonbozo telepulesen m" << endl;
+    cout << right << setw(13) << "kulonbozo madarfaj elofordulasat tanulmanyozzak. Egy adott idoszakban megszamoltak," << endl;
+    cout << right << setw(13) << "hogy az egyes telepulesen egy madarfajnak hany egyedevel talalkoztak. Igaz-e olyan " << endl;
+    cout << right << setw(13) << "minden madarfaj elofordult legalabb egy telepulesen?" << endl;
+}
+
 //menürendszer
 
 void echoMenu(vector<vector<int> > &data) {
@@ -186,6 +314,7 @@ void echoMenu(vector<vector<int> > &data) {
 
     bool menuSuccess=false;
     do{
+        
         system("cls");
         cout << "||=============================================||" <<  endl;
         cout << "||" << "Valasszon a lehetosegek kozul: " << "              ||" << endl;
@@ -196,13 +325,10 @@ void echoMenu(vector<vector<int> > &data) {
         cout << "||" << "Uss le egy billentyut" << "                        ||" << endl;
         cout << "||" << "=============================================" << "||" << endl;
         char input;
-        input=getch();
+        input = getch();
         switch(input){
             case '1':
-                cout << right << setw(13) << "Madarak eletenek kutatasaval foglalkozo szakemberek n kulonbozo telepulesen m" << endl;
-                cout << right << setw(13) << "kulonbozo madarfaj elofordulasat tanulmanyozzak. Egy adott idoszakban megszamoltak," << endl;
-                cout << right << setw(13) << "hogy az egyes telepulesen egy madarfajnak hany egyedevel talalkoztak. Igaz-e olyan " << endl;
-                cout << right << setw(13) << "minden madarfaj elofordult legalabb egy telepulesen?" << endl;
+                echoTask();
                 menuSuccess = true;
                 system("pause");
                 break;
@@ -223,6 +349,7 @@ void echoMenu(vector<vector<int> > &data) {
                 cout << "Sikeresen kilepett a programbol"<< endl;
                 menuSuccess = true;
                 exit(0);
+                system("pause");
                 break;
             default:
                 cout << "Wrong input" << endl;
