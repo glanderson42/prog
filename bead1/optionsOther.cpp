@@ -41,10 +41,8 @@ void readFromStandardInput(vector<vector<int> > &data) {
     try{
         standardInput(data);
         if(existsVillageWithAllBirds(data)) {
-            cout << data;
             cout << "Van" << endl;
         }else {
-            cout << data;
             cout << "Nincs" << endl;
         }
     }catch(Exception e) {
