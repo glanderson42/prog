@@ -101,13 +101,10 @@ vector<vector<int> > standardInput(vector<vector<int> > &data) {
 
           cin >> row >> col;
           if(cin.fail()) {
-            getline(cin, tempke);
-            cin.clear();
-            cin.ignore(10000, '\n');
             throw WI;
             }
 
-          if(row < 0 || col < 0) {
+          if(row <= 0 || col <= 0) {
             getline(cin, tempke);
             cin.clear();
             cin.ignore(10000, '\n');
@@ -147,7 +144,7 @@ void echoMenu(vector<vector<int> > &data) {
 
     bool menuSuccess=false;
     do{
-        
+
         system("cls");
         cout << "||=============================================||" <<  endl;
         cout << "||" << "Valasszon a lehetosegek kozul: " << "              ||" << endl;
