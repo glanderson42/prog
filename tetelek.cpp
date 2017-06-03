@@ -6,6 +6,12 @@
 #include <iostream>
 #include <algorithm>
 #include <numeric>
+#include <cstdlib>
+#include <ctime>
+
+enum Exception {
+	EMPTY
+};
 
 //max search (value)
 template<typename T>
@@ -66,8 +72,29 @@ void writeItOut(std::vector<T> v) {
 	std::cout << "The index of the first even number: " << getSelectedIndex(v) << std::endl;
 }
 
+int getRandom() {
+	return std::rand() % 100000;
+}
+
 int main() {
-	std::vector<int> v = { 5, 188, 8, 198, 7, 9, 2984 };
-	writeItOut(v);
+	std::srand(std::time(0));
+	try {
+		std::vector<int> v;
+		for (int i = 0; i < 1000; ++i) {
+			v.push_back(getRandom());
+		}
+		if (v.empty()) {
+			throw EMPTY;
+		}
+		else {
+			writeItOut(v);
+		}
+	}
+	catch(Exception e) {
+		switch (e) {
+		case EMPTY:
+			std::cout << "The vector is empty" << std::endl;
+		}
+	}
 	return 0;
 }
