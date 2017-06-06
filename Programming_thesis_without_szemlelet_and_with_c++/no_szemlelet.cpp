@@ -10,13 +10,13 @@
 #include <ctime>
 
 enum Exception {
-	EMPTY
+   EMPTY
 };
 
 //max search (value)
 template<typename T>
 T& getMax(std::vector<T>& v) {
-	return *std::max_element(v.begin(), v.end());
+   return *std::max_element(v.begin(), v.end());
 }
 //max search (index)
 template<typename T>
